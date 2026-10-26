@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4efe6;
+  --foreground: #161616;
+  --card: #fffdf8;
+  --accent: #b42318;
+  --muted: #5c564e;
+  --line: #e4d9c8;
+  --ink: #111111;
 }
 
 @theme inline {
@@ -10,17 +19,51 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-accent: var(--accent)
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Georgia, serif;
+}
+
+.header {
+  @apply border-b-4 bg-[var(--card)] p-6;
+}
+
+.headings {
+  @apply text-4xl sm:text-3xl text-center p-4 capitalize;
+}
+
+.login-links {
+  @apply inline-flex items-center justify-center rounded-md border border-[var(--line)] bg-transparent px-3 py-2 text-sm font-medium hover:bg-black/5 cursor-pointer;
+}
+
+.register-links {
+  @apply inline-flex items-center justify-center rounded-md bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-60 cursor-pointer;
+}
+
+.button-search-box {
+  @apply inline-flex items-center justify-center rounded-md bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-60 cursor-pointer;
+}
+
+.input-search-box {
+  @apply rounded-md border border-[var(--line)] bg-white px-3 py-2 text-base outline-none focus:border-[var(--accent)] w-full;
+}
+
+.links {
+  @apply block rounded-xl border border-(--line) bg-(--card) p-5 m-2
+}
+
+.signup-form-card {
+  @apply rounded-xl border border-[var(--line)] bg-[var(--card)] shadow-sm;
+}
+
+.signup-form-input {
+  @apply w-full rounded-md border border-[var(--line)] bg-white py-2 pl-10 pr-3 text-base outline-none focus:border-[var(--accent)];
+}
+
+.signup-button {
+  @apply inline-flex items-center justify-center rounded-md bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-white hover:opacity-90 disabled:opacity-60;
 }
