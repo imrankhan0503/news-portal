@@ -43,7 +43,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
           {data.author && (
             <p className="mt-3 text-sm text-(--muted)">
               <span className="font-medium text-(--accent)">
-                Created by: {data.author.username}
+                By: {data.author.username}
               </span>
             </p>
           )}

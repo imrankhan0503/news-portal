@@ -12,12 +12,12 @@ const Comments = async ({ postid, isLoggedIn, isAuthor, userId } : {
 
   return (
     <div className="rounded-xl border border-(--line) bg-(--card) p-6 shadow-sm sm:p-8 mt-4">
+      <span className="font-bold">Comments: </span>
       {comments && comments.length ? (
         comments.map((comment, index) => (
           
             <div key={comment.id}
               className="rounded-xl border border-(--line) bg-(--card) p-6 shadow-sm sm:p-8 space-y-4 mt-4">
-
               <p>{comment.content}</p>
               <p className="text-right">
                 By:{" "}
