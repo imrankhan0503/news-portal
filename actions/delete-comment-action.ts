@@ -9,8 +9,6 @@ export const DeleteCommentAction = async(commentId: string) => {
 
     const {error, data} = await supabase.from("commentss").delete().eq("id", commentId)
     
-     console.log("Error", error, "Data", data)
-
         revalidatePath("/")
 
 }
